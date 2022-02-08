@@ -19,6 +19,8 @@
                 <li class="card-text"> <%= movie.duration %> minutes</li>
               </ul>
               <p class="card-text"> <%= movie.description %> </p>
+              <span class="badge bg-light rounded-pill"><%= "⭐️"*bookmark.rating %></span>
+              <p class="card-text"> <%= bookmark.commentaire %> </p>
               <%= link_to "Delete", bookmark_path(bookmark), method: :delete, class:"btn btn-danger" %>
             </div>
           </div>
