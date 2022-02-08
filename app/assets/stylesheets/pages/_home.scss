@@ -25,11 +25,11 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #5E000C;
+  background: #C1000F;
 }
 
 .btn-flat:hover {
-  background: #C1000F;
+  background: #ca2f3c;
   color: white;
 }
 
@@ -55,6 +55,9 @@
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     text-decoration: none;
+    & :hover {
+      text-decoration: none;
+    }
   }
 
 }
