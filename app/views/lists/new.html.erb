@@ -1,0 +1,8 @@
+
+<div class="container">
+  <%= simple_form_for(list) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :cover, as: :file %>
+    <%= f.submit "Valider", class: "btn btn-primary" %>
+  <% end %>
+</div>
