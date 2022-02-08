@@ -1,0 +1,30 @@
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.cover.key, height: 200, crop: :fill %>')">
+    <h1><%= @list.title %></h1>
+  </div>
+
+<div class="container">
+  <% @list.movies.each do |movie| %>
+    <div class="card my-3" style="max-width: 540px;">
+      <div class="row g-0 rounded-3">
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+          <div class="col-md-4">
+            <%= image_tag movie.poster_url, alt: "movie-poster", width: 200 %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"> <%= movie.title %> </h5>
+              <ul class="infos-movie">
+                <li class="card-text"> <%= movie.year %></li>
+                <li class="card-text"> • </li>
+                <li class="card-text"> <%= movie.duration %> minutes</li>
+              </ul>
+              <p class="card-text"> <%= movie.description %> </p>
+              <%= link_to "Delete", bookmark_path(bookmark), method: :delete, class:"btn btn-danger" %>
+            </div>
+          </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to "Ajouter un film", new_list_bookmark_path(@list), class: "btn btn-primary mt-2" %>
+</div>
